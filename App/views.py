@@ -13,3 +13,6 @@ def sample (request):
 def details (request,id):
      mymembers = App.objects.get(id=id)
      return render(request,'details.html',{'mymember': mymembers})
+def testing(request):
+    fruits = ['apple','Banana','Cherry','orange']
+    return render(request,'template.html',{'fruits': fruits})

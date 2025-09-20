@@ -1,0 +1,17 @@
+
+
+{% extends "master.html" %}
+
+{% load static %}
+{% block title %}
+Testing
+{% endblock %}
+
+
+{% block content %}
+{% for x in fruits %}
+    <h1 id="body">{{ x }}</h1>
+{% endfor %}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+{% endblock %}
