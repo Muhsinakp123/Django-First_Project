@@ -21,9 +21,12 @@ def add (request):
 def addmember(request):
         x = request.POST["firstname"]
         y = request.POST["lastname"]
+        z = request.POST['phone']
+        j = request.POST['joined_date']
+        
         
         # Save new member
-        new_memeber = App(firstname=x, lastname=y)
+        new_memeber = App(firstname=x, lastname=y, phone=z, joined_date=j)
         
         new_memeber.save()
         
@@ -39,6 +42,8 @@ def update_member(request,id):
         updated =  App.objects.get(id=id)
         updated.firstname = request.POST["firstname"]
         updated.lastname = request.POST["lastname"]
+        updated.phone = request.POST["phone"]
+        updated.joined_date = request.POST["joined_date"]
         updated.save()
         
         return redirect("sample")
