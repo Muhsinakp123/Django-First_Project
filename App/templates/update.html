@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+  update Member
+{% endblock %}
+
+{% block content %}
+    <h1>Update Member</h1>
+    <form method="post" action="{% url 'update_member' mymember.id %}">
+
+        {% csrf_token %}
+        
+        <label>First Name</label><br/>
+        <input type="text" name="firstname" value="{{ mymember.firstname }}"><br/><br/>
+
+        <label>Last Name</label><br/>
+        <input type="text" name="lastname" value="{{ mymember.lastname }}"><br/><br/>
+
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

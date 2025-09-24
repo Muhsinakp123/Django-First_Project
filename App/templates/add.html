@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Add Member
+{% endblock %}
+
+{% block content %}
+    <h1>Add Member</h1>
+    <form method="post" action='addmember/'>
+        {% csrf_token %}
+        
+        <label>First Name</label><br/>
+        <input type="text" name="firstname"><br/><br/>
+
+        <label>Last Name</label><br/>
+        <input type="text" name="lastname"><br/><br/>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
